@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "sky"
+  },
+  {
+    "id": 2,
+    "name": "nature"
+  },
+  {
+    "id": 3,
+    "name": "water"
+  },
+  {
+    "id": 4,
+    "name": "ocean"
+  },
+  {
+    "id": 5,
+    "name": "fish"
+  },
+  {
+    "id": 6,
+    "name": "forest"
+  },
+  {
+    "id": 7,
+    "name": "sunlight"
+  },
+  {
+    "id": 8,
+    "name": "tree"
+  },
+  {
+    "id": 9,
+    "name": "coral"
+  },
+  {
+    "id": 10,
+    "name": "leaves"
+  }
+]

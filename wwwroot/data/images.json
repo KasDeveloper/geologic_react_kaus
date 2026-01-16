@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "file": {
+      "name": "anthony-rosset-coY9XY7x_mw-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 8.85
+    },
+    "dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "tags": [1, 2]
+  },
+  {
+    "id": 2,
+    "file": {
+      "name": "cristian-palmer-XexawgzYOBc-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 1.42
+    },
+    "dimensions": {
+      "width": 4000,
+      "height": 3000
+    },
+    "tags": [2, 3, 4]
+  },
+  {
+    "id": 3,
+    "file": {
+      "name": "hiroko-yoshii-9y7y26C-l4Y-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 1.86
+    },
+    "dimensions": {
+      "width": 3648,
+      "height": 2736
+    },
+    "tags": [2, 3, 4, 5, 7, 9]
+  },
+  {
+    "id": 4,
+    "file": {
+      "name": "jay-mantri-TFyi0QOx08c-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 0.66
+    },
+    "dimensions": {
+      "width": 2200,
+      "height":1467
+    },
+    "tags": [2, 6]
+  },
+  {
+    "id": 5,
+    "file": {
+      "name": "jeremy-bishop-EwKXn5CapA4-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 6.89
+    },
+    "dimensions": {
+      "width": 3648,
+      "height": 5472
+    },
+    "tags": [2, 8]
+  },
+  {
+    "id": 6,
+    "file": {
+      "name": "linus-nylund-tXvXT25LI84-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 1.00
+    },
+    "dimensions": {
+      "width": 3776,
+      "height": 2520
+    },
+    "tags": [3, 4, 5, 9]
+  },
+  {
+    "id": 7,
+    "file": {
+      "name": "louise-pilgaard-4muj7Br-O4U-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 3.66
+    },
+    "dimensions": {
+      "width": 4898,
+      "height": 3265
+    },
+    "tags": [2, 6, 7]
+  },
+  {
+    "id": 8,
+    "file": {
+      "name": "sebastian-boring-1s66d5yY5gE-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 3.71
+    },
+    "dimensions": {
+      "width": 4461,
+      "height": 6691
+    },
+    "tags": [2, 3, 4]
+  },
+  {
+    "id": 9,
+    "file": {
+      "name": "sebastian-unrau-sp-p7uuT0tw-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 3.69
+    },
+    "dimensions": {
+      "width": 6000,
+      "height": 4000
+    },
+    "tags": [2, 6, 7]
+  },
+  {
+    "id": 10,
+    "file": {
+      "name": "wes-hicks-6rNitHsIU3c-unsplash.jpg",
+      "type": "jpg",
+      "size (MB)": 5.75
+    },
+    "dimensions": {
+      "width": 6720,
+      "height": 4480
+    },
+    "tags": [2, 10]
+  }
+]
