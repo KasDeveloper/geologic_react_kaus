@@ -4,7 +4,6 @@ import ImagesList from './components/images-list'
 import Filters from './components/filters'
 import 'bootstrap/dist/css/bootstrap.css'
 
-
 document.onreadystatechange = () => {
   if (document.readyState !== 'loading') {
     initApplication()
@@ -24,6 +23,14 @@ const App = () => {
   const [tags, setTags] = useState([])
   const [selectedTagIds, setSelectedTagIds] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
+  const [filters, setFilters] = useState({
+    sizeMin: '',
+    sizeMax: '',
+    widthMin: '',
+    widthMax: '',
+    heightMin: '',
+    heightMax: '',
+  })
 
   useEffect(() => {
     Promise.all([
@@ -76,14 +83,58 @@ const App = () => {
     setSelectedTagIds([])
   }
 
+  const handleFilterChange = (name, value) => {
+    setFilters((current) => ({
+      ...current,
+      [name]: value,
+    }))
+  }
+
   const filteredImages = useMemo(() => {
-    if (!selectedTagIds.length) {
-      return images
+    const parseOrNull = (value) => {
+      if (value === '' || value === null || value === undefined) return null
+      const num = Number(value)
+      return Number.isNaN(num) ? null : num
     }
-    return images.filter((image) =>
-      selectedTagIds.every((tagId) => image.tags?.includes(tagId))
-    )
-  }, [images, selectedTagIds])
+
+    const sizeMin = parseOrNull(filters.sizeMin)
+    const sizeMax = parseOrNull(filters.sizeMax)
+    const widthMin = parseOrNull(filters.widthMin)
+    const widthMax = parseOrNull(filters.widthMax)
+    const heightMin = parseOrNull(filters.heightMin)
+    const heightMax = parseOrNull(filters.heightMax)
+
+    const passesRange = (value, min, max) => {
+      if (min !== null && value < min) return false
+      if (max !== null && value > max) return false
+      return true
+    }
+
+    return images.filter((image) => {
+      if (selectedTagIds.length) {
+        if (!selectedTagIds.every((tagId) => image.tags?.includes(tagId))) {
+          return false
+        }
+      }
+
+      const fileSize = image.file?.['size (MB)']
+      if (!passesRange(fileSize, sizeMin, sizeMax)) {
+        return false
+      }
+
+      const width = image.dimensions?.width
+      if (!passesRange(width, widthMin, widthMax)) {
+        return false
+      }
+
+      const height = image.dimensions?.height
+      if (!passesRange(height, heightMin, heightMax)) {
+        return false
+      }
+
+      return true
+    })
+  }, [images, selectedTagIds, filters])
 
   return (
     <>
@@ -91,6 +142,8 @@ const App = () => {
         tags={tags}
         selectedTagIds={selectedTagIds}
         onClearTags={handleClearTags}
+        filters={filters}
+        onFilterChange={handleFilterChange}
       />
       <ImagesList
         images={filteredImages}

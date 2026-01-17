@@ -1,5 +1,5 @@
 
-const Filters = ({ tags, selectedTagIds, onClearTags }) => {
+const Filters = ({ tags, selectedTagIds, onClearTags, filters, onFilterChange }) => {
   const selectedTags = tags.filter((tag) => selectedTagIds.includes(tag.id))
   return (
     <div className='filters-container container mt-3'>
@@ -28,17 +28,31 @@ const Filters = ({ tags, selectedTagIds, onClearTags }) => {
           <h3>File Size:</h3>
         </div>
         <div className='col-8'>
-          <div className='row'>
-            <div class="input-group" style={{ maxWidth: '9rem' }}>
-              <div class="input-group-prepend">
-                <span class="input-group-text">&gt;=</span>
+          <div className='row g-2'>
+            <div className="input-group" style={{ maxWidth: '9rem' }}>
+              <div className="input-group-prepend">
+                <span className="input-group-text">&gt;=</span>
               </div>
-              <input type="number" class="form-control" step="0.1" />
+              <input
+                name="sizeMin"
+                type="number"
+                className="form-control"
+                step="0.1"
+                value={filters.sizeMin}
+                onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+              />
             </div>
-            <div class="input-group" style={{ maxWidth: '9rem' }}>
-              <input type="number" class="form-control" step="0.1" />
-              <div class="input-group-append">
-                <span class="input-group-text">&lt;=</span>
+            <div className="input-group" style={{ maxWidth: '9rem' }}>
+              <input
+                name="sizeMax"
+                type="number"
+                className="form-control"
+                step="0.1"
+                value={filters.sizeMax}
+                onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+              />
+              <div className="input-group-append">
+                <span className="input-group-text">&lt;=</span>
               </div>
             </div>
           </div>
@@ -53,16 +67,30 @@ const Filters = ({ tags, selectedTagIds, onClearTags }) => {
             <div className='col-auto'>
               <div className='row'>
                 <h5 className='col mb-0 pb-0 mt-2'>Width:</h5>
-                <div class="input-group" style={{ maxWidth: '10rem' }}>
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">&gt;=</span>
+                <div className="input-group" style={{ maxWidth: '10rem' }}>
+                  <div className="input-group-prepend">
+                    <span className="input-group-text">&gt;=</span>
                   </div>
-                  <input type="number" class="form-control" step="100" />
+                  <input
+                    name="widthMin"
+                    type="number"
+                    className="form-control"
+                    step="100"
+                    value={filters.widthMin}
+                    onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+                  />
                 </div>
-                <div class="input-group" style={{ maxWidth: '10rem' }}>
-                  <input type="number" class="form-control" step="100" />
-                  <div class="input-group-append">
-                    <span class="input-group-text">&lt;=</span>
+                <div className="input-group" style={{ maxWidth: '10rem' }}>
+                  <input
+                    name="widthMax"
+                    type="number"
+                    className="form-control"
+                    step="100"
+                    value={filters.widthMax}
+                    onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+                  />
+                  <div className="input-group-append">
+                    <span className="input-group-text">&lt;=</span>
                   </div>
                 </div>
               </div>
@@ -70,16 +98,30 @@ const Filters = ({ tags, selectedTagIds, onClearTags }) => {
             <div className='col-auto'>
               <div className='row'>
                 <h5 className='col mb-0 pb-0 mt-2'>Height:</h5>
-                <div class="input-group" style={{ maxWidth: '10rem' }}>
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">&gt;=</span>
+                <div className="input-group" style={{ maxWidth: '10rem' }}>
+                  <div className="input-group-prepend">
+                    <span className="input-group-text">&gt;=</span>
                   </div>
-                  <input type="number" class="form-control" step="100" />
+                  <input
+                    name="heightMin"
+                    type="number"
+                    className="form-control"
+                    step="100"
+                    value={filters.heightMin}
+                    onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+                  />
                 </div>
-                <div class="input-group" style={{ maxWidth: '10rem' }}>
-                  <input type="number" class="form-control" step="100" />
-                  <div class="input-group-append">
-                    <span class="input-group-text">&lt;=</span>
+                <div className="input-group" style={{ maxWidth: '10rem' }}>
+                  <input
+                    name="heightMax"
+                    type="number"
+                    className="form-control"
+                    step="100"
+                    value={filters.heightMax}
+                    onChange={(e) => onFilterChange(e.target.name, e.target.value)}
+                  />
+                  <div className="input-group-append">
+                    <span className="input-group-text">&lt;=</span>
                   </div>
                 </div>
               </div>
