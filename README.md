@@ -15,3 +15,6 @@
 
 1. `npm install` — Downloads necessary modules into the project.
 2. `npm run dev` — Starts a [Vite](https://vitejs.dev/) development server.
+
+
+# Changed JSX attributes class → className for React
