@@ -18,3 +18,10 @@
 
 
 # Changed JSX attributes class → className for React
+# Code improvements 
+- Prevent error messages from overwriting each other
+- Improve filter accessibility (labels/ARIA)
+
+# Future imporvements
+- Move from Static JSON to an API Layer
+- Move filtering and pagination server side for scale
